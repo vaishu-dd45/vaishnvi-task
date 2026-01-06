@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import "./Testimonials.css";
 import user1 from "../assets/user1.png";
 import user2 from "../assets/user2.png";
-
 import user4 from "../assets/user4.png";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -18,16 +19,14 @@ const data = [
     name: "Emma Stone",
     role: "Agency Owner",
     stars: 5,
-    text:
-      "I have been making ₹20k per month and it’s been just 2 months.",
+    text: "I have been making ₹20k per month and it’s been just 2 months.",
     img: user1,
   },
   {
     name: "Neha Sharma",
     role: "Apparel Founder",
     stars: 4,
-    text:
-      "Profit First revealed a ₹45k leak in our funnel. ROI was immediate.",
+    text: "Profit First revealed a ₹45k leak in our funnel. ROI was immediate.",
     img: user2,
   },
 ];
@@ -45,40 +44,71 @@ const Testimonials = () => {
   const user = data[index];
 
   return (
-    <section className="testimonial-wrapper">
-      <h2>
+    <motion.section
+      className="testimonial-wrapper"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {/* HEADING */}
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         See what our <span>ELITE USERS</span> say
-      </h2>
+      </motion.h2>
 
-      <div className="testimonial-card horizontal">
-
+      {/* TESTIMONIAL CARD */}
+      <motion.div
+        className="testimonial-card horizontal"
+        key={index} // re-render animation on change
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         {/* LEFT IMAGE */}
-       <div className="image-section">
+        <motion.div
+          className="image-section"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+        >
           <img src={user.img} alt={user.name} />
-        </div>
+        </motion.div>
 
         {/* RIGHT CONTENT */}
-        <div className="content-section">
+        <motion.div
+          className="content-section"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
           <h3>{user.name}</h3>
           <p className="role">{user.role}</p>
 
-          <div className="stars">
-            {"★".repeat(user.stars)}
-          </div>
+          <div className="stars">{"★".repeat(user.stars)}</div>
 
           <p className="text">“{user.text}”</p>
 
           <div className="controls">
-            <button onClick={() => setIndex((index - 1 + data.length) % data.length)}>
+            <button
+              onClick={() =>
+                setIndex((index - 1 + data.length) % data.length)
+              }
+            >
               ‹
             </button>
             <button onClick={() => setIndex((index + 1) % data.length)}>
               ›
             </button>
           </div>
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 

@@ -39,3 +39,25 @@
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
   object-fit: cover;
 }
+.hero {
+  display: flex;
+  padding: 80px 60px;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+
+  /* Animated gradient background */
+  background: linear-gradient(
+    120deg,
+    #0b0b0b,
+    #0f2f24,
+    #0b0b0b
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+
+

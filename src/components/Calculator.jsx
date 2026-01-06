@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "./Calculator.css";
 import logo from "../assets/logo.png";
+import { motion } from "framer-motion";
 
 export default function Calculator() {
   const [referrals, setReferrals] = useState("");
@@ -34,18 +36,47 @@ export default function Calculator() {
   }
 
   return (
-    <section className="calculator">
+    <motion.section
+      className="calculator"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="calculator-wrapper">
+
         {/* HEADER */}
-        <div className="calculator-header">
+        <motion.div
+          className="calculator-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <img src={logo} alt="Profit First" className="logo" />
           <h2>Affiliate Earning Calculator</h2>
-        </div>
+        </motion.div>
 
         {/* GRID */}
-        <div className="calculator-grid">
+        <motion.div
+          className="calculator-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.2 } }
+          }}
+        >
           {/* INPUT CARD */}
-          <div className="card">
+          <motion.div
+            className="card"
+            variants={{
+              hidden: { opacity: 0, x: -40 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h3>Inputs</h3>
 
             <label>Number of active referrals</label>
@@ -84,46 +115,85 @@ export default function Calculator() {
                 Reset
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          {/* RESULTS SECTION (NO OUTER BOX) */}
-          <div className="results-section">
+          {/* RESULTS */}
+          <motion.div
+            className="results-section"
+            variants={{
+              hidden: { opacity: 0, x: 40 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h3>Your Earnings & Impacts</h3>
 
-            <div className="result">
-              <div className="result-left">
-                <span>Affiliate – Monthly recurring income</span>
-                <strong>₹ {monthlyIncome.toLocaleString()}</strong>
-              </div>
-              <div className="result-right">
-                {referrals || 0} × {commission || 0}
-              </div>
-            </div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.15 } }
+              }}
+            >
+              <motion.div
+                className="result"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
+                <div className="result-left">
+                  <span>Affiliate – Monthly recurring income</span>
+                  <strong>₹ {monthlyIncome.toLocaleString()}</strong>
+                </div>
+                <div className="result-right">
+                  {referrals || 0} × {commission || 0}
+                </div>
+              </motion.div>
 
-            <div className="result">
-              <div className="result-left">
-                <span>Affiliate – Annual recurring 12×</span>
-                <strong>₹ {annualIncome.toLocaleString()}</strong>
-              </div>
-              <div className="result-right">12 Months</div>
-            </div>
+              <motion.div
+                className="result"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
+                <div className="result-left">
+                  <span>Affiliate – Annual recurring 12×</span>
+                  <strong>₹ {annualIncome.toLocaleString()}</strong>
+                </div>
+                <div className="result-right">12 Months</div>
+              </motion.div>
 
-            <div className="result">
-              <div className="result-left">
-                <span>Projected Affiliate lifetime earning</span>
-                <strong>₹ {lifetimeIncome.toLocaleString()}</strong>
-              </div>
-              <div className="result-right">
-                {months || 0} Months Average
-              </div>
-            </div>
+              <motion.div
+                className="result"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
+                <div className="result-left">
+                  <span>Projected Affiliate lifetime earning</span>
+                  <strong>₹ {lifetimeIncome.toLocaleString()}</strong>
+                </div>
+                <div className="result-right">
+                  {months || 0} Months Average
+                </div>
+              </motion.div>
+            </motion.div>
 
-            <button className="btn primary become">
+            <motion.button
+              className="btn primary become"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Become Our Affiliate
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
- );
+    </motion.section>
+  );
 }

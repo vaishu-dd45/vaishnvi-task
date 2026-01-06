@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "../components/FAQ.css";
+import { motion } from "framer-motion";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,11 +27,24 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="faq-section" id="FAQ">
+    <motion.section
+      className="faq-section"
+      id="FAQ"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="faq-container">
 
         {/* LEFT */}
-        <div className="faq-left">
+        <motion.div
+          className="faq-left"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h1>
             Frequently Asked<br />
             <span>Questions</span>
@@ -38,14 +53,30 @@ const FAQ = () => {
             If you have any query in your mind this section might answer that and
             if not we have AI by your side.
           </p>
-        </div>
+        </motion.div>
 
         {/* RIGHT */}
-        <div className="faq-right">
+        <motion.div
+          className="faq-right"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.15 }
+            }
+          }}
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
               className={`faq-item ${activeIndex === index ? "active" : ""}`}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               onClick={() => setActiveIndex(index)}
             >
               <div className="faq-question">
@@ -56,14 +87,21 @@ const FAQ = () => {
               </div>
 
               {activeIndex === index && (
-                <div className="faq-answer">{faq.answer}</div>
+                <motion.div
+                  className="faq-answer"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {faq.answer}
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 };
 
