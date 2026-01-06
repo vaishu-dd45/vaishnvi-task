@@ -1,0 +1,165 @@
+/* =========================
+   MAIN SECTION
+========================= */
+.calculator {
+  background: #000; 
+  color: white;
+  padding: 60px 0;
+}
+
+
+.calculator-wrapper {
+ max-width: 1200px;
+  margin: 20px;
+  padding: 0 12px;
+}
+
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+  height: 40px;
+}
+
+.calculator-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* =========================
+   GRID
+========================= */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* =========================
+   INPUT CARD
+========================= */
+.card {
+  background: #1a1a1a;
+  border-radius: 22px;
+  padding: 32px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+/* LABELS & INPUTS */
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e5e5e5;
+}
+
+input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: none;
+  background: #2a2a2a;
+  color: white;
+  font-size: 14px;
+}
+
+/* =========================
+   RESULTS
+========================= */
+.results-section h3 {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.result {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 18px 22px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-left span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.result-left strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 4px;
+}
+
+.result-right {
+  font-size: 14px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #22e58b;
+  color: #000;
+}
+
+.secondary {
+  background: #333;
+  color: #fff;
+}
+
+.become {
+  margin-top: 30px;
+  padding: 14px 28px;
+  border-radius: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo {
+    position: static;
+}
+}

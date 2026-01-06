@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle, #0b2f1a, #05060a);
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 60px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  padding: 80px 60px;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 100px;
+  border-radius: 20px;
+}
+
+/* BUTTON */
+.green-btn {
+  background: #14f195;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* BENEFITS */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* COMMON */
+section {
+  padding: 80px 60px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+}

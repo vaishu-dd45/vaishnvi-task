@@ -1,0 +1,41 @@
+.hero {
+  display: flex;
+  padding: 80px 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.font {
+  font-size: 50px;
+  line-height: 1.5;
+}
+.text{
+    font-size: 24px;
+}
+
+.hero-img {
+  width: 420px;
+  border-radius: 20px;
+}
+
+.green-btn-hero {
+  background: #14f195;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  width: 300px;
+}
+
+.hero-video {
+  width: 400px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+}

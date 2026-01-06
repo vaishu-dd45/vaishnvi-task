@@ -1,0 +1,141 @@
+
+.box {
+  padding: 40px 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25)
+  );
+  border-radius: 22px;
+
+  /* Glass blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Soft shadow */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.06);
+
+  /* Subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* HEADER */
+.benefit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.benefit-header h2 {
+  font-size: 26px;
+  margin-left: 70px;
+}
+
+.benefit-header p {
+  max-width: 520px;
+  color: #cfcfcf;
+  margin-left: 20px;
+}
+
+/* SHOW CRISS-CROSS */
+.benefit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+/* TEXT */
+.cn{
+  font-size: 20px;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.cnp{
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-left: 40px;
+}
+.ag{
+  font-size: 20px;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-left: 160px;
+}
+
+.agp{
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-right: 50px;
+}
+
+.di{
+  font-size: 20px;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-left: 80px;
+}
+
+.dip{
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-left: 50px;
+}
+.fr{
+  font-size: 20px;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-left:130px;
+}
+
+.frp{
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-right: 70px;
+}
+/* IMAGE */
+.benefit-row img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+  justify-self: center;
+}
+
+/* BUTTON */
+.green-btn-who {
+  background: #14f195;
+  padding: 16px 26px;
+  border-radius: 24px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 120px;
+}
+/* IMAGE */
+.benefit-row img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+  justify-self: center;
+
+  /* smooth hover */
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.benefit-row img:hover {
+  transform: scale(1.05); /* thodi si badi */
+  box-shadow: 
+    0 25px 55px rgba(20, 241, 149, 0.55); /* green shadow */
+}

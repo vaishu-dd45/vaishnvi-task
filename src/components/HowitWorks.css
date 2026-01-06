@@ -1,0 +1,99 @@
+.how-wrapper {
+  padding: 80px 60px;
+  background: radial-gradient(circle at right, #1d3b1f, #05070b);
+  color: #fff;
+}
+
+.how-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 60px;
+}
+
+.how-title span {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card.light {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  background: #111;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.green-btn {
+  width: 100%;
+  background: #21f3a4;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.green-btn.small {
+  margin-top: 10px;
+}
+
+.dark-btn {
+  margin-top: 10px;
+  background: #1a1a1a;
+  border: none;
+  padding: 8px;
+  border-radius: 18px;
+  color: #fff;
+}
+
+.google-btn {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.or {
+  text-align: center;
+  margin: 10px 0;
+  opacity: 0.6;
+}
+
+.step-text {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
