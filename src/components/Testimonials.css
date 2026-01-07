@@ -120,3 +120,105 @@
   background: #21f3a4;
   color: #000;
 }
+/* =========================
+   TESTIMONIAL / REVIEWS RESPONSIVE
+========================= */
+
+/* Tablet / small screens (<900px) */
+@media (max-width: 900px) {
+  .testimonial-wrapper {
+    padding: 60px 30px;
+  }
+
+  .testimonial-wrapper h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .testimonial-card.horizontal {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .image-section {
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: none;
+  }
+
+  .image-section img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .content-section {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .content-section h3 {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (<480px) */
+@media (max-width: 480px) {
+  .testimonial-wrapper {
+    padding: 40px 20px;
+  }
+
+  .testimonial-wrapper h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-card.horizontal {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 15px 10px;
+  }
+
+  .image-section {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .image-section img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .content-section {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .content-section h3 {
+    font-size: 16px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .controls {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}

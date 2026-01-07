@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -233,4 +236,179 @@ body {
   display: block;
   height: 100%;
   background: #00ff99;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet / small screens */
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 15px;
+  }
+
+  .main {
+    padding: 15px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile input {
+    width: 100%;
+  }
+
+  .card h2 {
+    font-size: 16px;
+  }
+
+  .card h3 {
+    font-size: 12px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .chart-box {
+    padding: 15px;
+  }
+
+  .bars {
+    gap: 10px;
+  }
+
+  .right-panel {
+    flex-direction: column;
+  }
+
+  .gauge,
+  .progress-box {
+    padding: 15px;
+  }
+}
+/* =========================
+   GRAPH / CHART RESPONSIVE
+========================= */
+
+/* Tablet / small screens (<900px) */
+@media (max-width: 900px) {
+  .chart-box {
+    padding: 15px;
+  }
+
+  .bars {
+    height: 150px; /* thoda chhota */
+    gap: 10px;
+  }
+
+  .bar span {
+    background-size: cover;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .right-panel {
+    flex-direction: column;
+  }
+
+  .gauge, .progress-box {
+    padding: 15px;
+  }
+
+  .meter {
+    height: 120px; /* thoda chhota */
+  }
+
+  .needle {
+    height: 70px;
+  }
+}
+
+/* Mobile (<480px) */
+@media (max-width: 480px) {
+  .chart-box {
+    padding: 12px;
+  }
+
+  .bars {
+    height: 120px; /* aur chhota */
+    gap: 6px;
+  }
+
+  .bar span {
+    width: 100%;
+  }
+
+  .content {
+    grid-template-columns: 1fr; /* Right panel ke niche stack ho jaye */
+    gap: 15px;
+  }
+
+  .right-panel {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gauge, .progress-box {
+    padding: 12px;
+  }
+
+  .meter {
+    height: 100px;
+  }
+
+  .needle {
+    height: 60px;
+  }
 }

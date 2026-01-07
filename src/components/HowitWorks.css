@@ -97,3 +97,99 @@
   border-radius: 12px;
 }
 
+/* =========================
+   HOW / STEPS RESPONSIVE
+========================= */
+
+/* Tablet / small screens */
+@media (max-width: 900px) {
+  .how-wrapper {
+    padding: 50px 40px;
+  }
+
+  .how-title {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .how-title span {
+    font-size: 28px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card input {
+    padding: 8px;
+  }
+
+  .green-btn,
+  .dark-btn,
+  .google-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .step-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .how-wrapper {
+    padding: 30px 20px;
+  }
+
+  .how-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .how-title span {
+    font-size: 22px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .card input {
+    padding: 6px;
+  }
+
+  .green-btn,
+  .dark-btn,
+  .google-btn {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .step-text {
+    font-size: 12px;
+  }
+
+  .card img {
+    border-radius: 10px;
+  }
+}

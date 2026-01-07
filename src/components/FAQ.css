@@ -67,3 +67,58 @@
 .icon {
   font-size: 12px;
 }
+/* =========================
+   FAQ RESPONSIVE
+========================= */
+
+/* Tablet / small screens */
+@media (max-width: 900px) {
+  .faq-section {
+    padding: 50px 40px;
+  }
+
+  .faq-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-left h1 {
+    font-size: 42px;
+  }
+
+  .faq-left p {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 30px 20px;
+  }
+
+  .faq-left h1 {
+    font-size: 32px;
+  }
+
+  .faq-left p {
+    font-size: 13px;
+  }
+
+  .faq-item {
+    padding: 14px 18px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .icon {
+    font-size: 10px;
+  }
+}

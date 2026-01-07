@@ -59,5 +59,71 @@
   animation: gradientMove 12s ease infinite;
 }
 
+/* =========================
+   HERO RESPONSIVE
+========================= */
+
+/* Tablet / small screens */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 50px 40px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .font {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .hero-img,
+  .hero-video {
+    width: 300px;
+    border-radius: 18px;
+  }
+
+  .green-btn-hero {
+    width: 250px;
+    padding: 12px 24px;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .font {
+    font-size: 28px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .hero-img,
+  .hero-video {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 14px;
+  }
+
+  .green-btn-hero {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 15px;
+  }
+}
 
 
