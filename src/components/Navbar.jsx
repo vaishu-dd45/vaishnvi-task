@@ -1,10 +1,15 @@
-import "./Navbar.css";
+import React from "react";
+import { Link } from "react-router-dom"; // ✅ import Link
 import logo from "../assets/logo.png";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <img src={logo} alt="logo" />
+      {/* Logo clickable */}
+      <Link to="/">
+        <img src={logo} alt="logo" className="logo" />
+      </Link>
 
       <ul>
         <li><a href="#hero">Home</a></li>
