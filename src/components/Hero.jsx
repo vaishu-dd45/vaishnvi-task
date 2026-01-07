@@ -2,8 +2,10 @@
 import "./Hero.css";
 import heroVideo from "../assets/hero.mp4";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+   const navigate = useNavigate();
   return (
     <section className="hero" id="hero">
 
@@ -47,18 +49,22 @@ export default function Hero() {
 
         {/* BUTTON */}
         <motion.button
-          className="green-btn-hero"
-          variants={{
-            hidden: { opacity: 0, scale: 0.8 },
-            visible: { opacity: 1, scale: 1 }
-          }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Become Our Affiliate
-        </motion.button>
-      </motion.div>
+        className="green-btn-hero"
+        variants={{
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: { opacity: 1, scale: 1 }
+        }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
+
+        // 🔥 CLICK → DASHBOARD
+        onClick={() => navigate("/dashboard")}
+      >
+        Go to Dashbaord
+      </motion.button>
+    </motion.div>
+     
 
       {/* RIGHT VIDEO */}
       <motion.video

@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -7,11 +8,12 @@ import HowItWorks from "./components/HowItWorks";
 import Calculator from "./components/Calculator";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
+import Dashboard from "./components/Dashboard";
 
-function App() {
+/* 🔹 Home page as a layout */
+function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       <WhoCanBenefit />
       <KeyBenefits />
@@ -19,9 +21,23 @@ function App() {
       <Calculator />
       <Testimonials />
       <FAQ />
-     
     </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* optional future pages */}
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Routes>
+    </>
+  );
+}
